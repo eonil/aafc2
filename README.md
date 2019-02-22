@@ -1,10 +1,11 @@
-AA2 (for Apple Cocoa)
-==================
+AAFC2 (App Architecture for Cocoa)
+============================
 Eonil, 2019.
 
 This document describes generic points of how to write an app.
 This document basically targets Swift and Apple Cocoa platform.
-
+Though this is optimized for Cocoa apps, major ideas can be applied 
+to another platforms.
 
 
 Summary
