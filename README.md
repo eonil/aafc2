@@ -1,18 +1,18 @@
-AAFC2 (App Architecture for Cocoa)
-============================
+AAFC2 (App Architecture for Cocoa 2)
+=============================
 Eonil, 2019.
 
-This document describes generic points of how to write an app.
-This document basically targets Swift and Apple Cocoa platform.
-Though this is optimized for Cocoa apps, major ideas can be applied 
-to another platforms.
+- This document describes generic points of how to write an app.
+- This document basically targets Swift and Apple AppKit/UIKit platform.
+- Though this is optimized for AppKit/UIKit apps, major ideas can be applied 
+  to another platforms.
 
 
 Summary
 ------------
 - Basic is REPL. With "single unified state".
 - Naive REPL can be very expensive. Optimize them as much as possible.
-- Cocoa is eventual-consistency system. We need to pass-by-copy the state to overcome latency.
+- AppKit/UIKit are eventual-consistency system. We need to pass-by-copy the state to overcome latency.
 - Use Swift and take advantage of copy-on-write to overcome cost of copying.
 - Do not trigger iteration by user input event. Instead, just integrate user input into app state. 
 - Limit loop frequency by triggering iteration by v-sync only if needed.
@@ -22,7 +22,7 @@ Summary
 
 REPL
 -------
-Basically, Cocoa app is a GUI app and GUI means interactivity.
+Basically, an AppKit/UIKit app is a GUI app and GUI means interactivity.
 REPL is the simplest way to write Interactive apps. There are many other approaches,
 but other approaches are usually just make things more complex with no significant benefit.
 
@@ -90,7 +90,7 @@ to avoid such operations wherever possible.
   
 
 
-Optimization -- Swift & Copy-on-Write
+Optimization — Swift & Copy-on-Write
 --------------------------------------------------
 Always use Swift. Because Swift has very strong support for value-semantic data structures.
 Swift data types are *copy-on-write* by default. Therefore, Swift value types are natively 
@@ -101,7 +101,7 @@ Objective-C, it should be far more painful experience than Swift.
 
 
 
-Optimization -- Loop on V-Sync
+Optimization — Loop on V-Sync
 ----------------------------------------
 Loop SHOULD NOT be directly triggered by user's input event. Detected input should be integrated into
 app state, and loop should be driven by another mechanism.
