@@ -66,10 +66,13 @@ have dependencies and transformations, "dataflow programming" can be a very good
 You just push some parameters to a configured pipeline, and gonna get result eventually and
 integrate them into app state.
 
-I do not support to apply "dataflow programming" to whole app. App should remain as REPL
-using "single unified state". "dataflow programming" works well only if each pipelines doesn't
-need to be consistent. And in almost all cases, apps require "state consistency" in very wide level.
+I do not support applying "dataflow programming" style to whole app. Basically, an app should
+remain as REPL with "single unified state". Because, "dataflow programming" works well only
+if each pipelines doesn't need to be fully consistent. And in almost all cases, apps require 
+"consistency" in very wide level — globally.
 REPL with "single unified state" is the best and easiest way to archive that so far in my opinion.
+Therefore, "dataflow programming" can be an optional choice to simplify complex I/O.
+
 
 
 Avoid Unnecessary Operations
