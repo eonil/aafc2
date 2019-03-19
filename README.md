@@ -106,6 +106,8 @@ Optimization — Swift & Copy-on-Write
 Always use Swift. Because Swift has very strong support for value-semantic data structures.
 Swift data types are *copy-on-write* by default. Therefore, Swift value types are natively 
 persistent data types, copies are cheap, and supports "single unified state" approach very well.
+Consider using proper *persistent-data-structure* if your dataset is large enough to cause
+performance issues.
 
 Although you also can implement "single unified state" approach with other languages like
 Objective-C, it should be far more painful experience than Swift. 
@@ -126,7 +128,7 @@ REPL iteration on non-main thread. Iteration only on v-sync also natively fits t
 and UI rendering must be performed only on main thread for AppKit/UIKit.
 
 Here can be another problem. If incoming messages are too many, memory space can be 
-insufficient. In my opinion, if there're too many messages, it doesn't matter because it there
+insufficient. In my opinion, if there're too many messages, it doesn't matter because if there
 are too many messages, it'd hard to process them too. At the first place, app should prevent
 production of huge amount of messages. If it's process-able, it's storable I think. 
 Also as a final protection, limit the message queue size, and reset the app if it overflows. 
