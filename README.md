@@ -188,6 +188,6 @@ Credit & License
 ---------------------
 Copyright (c) 2019 Eonil, Hoon H..
 All rights reserved.
-Using of this document is allowed under[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
-Using of any code is allowed under "MIT License".
+Using of this document is allowed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
+Using of any code is allowed under "MIT License" if exists.
 
