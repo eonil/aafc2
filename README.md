@@ -89,7 +89,7 @@ to avoid such operations wherever possible.
 
 - Some copying can be avoided by employing copy-on-write strategy.
 - Whole collection copying can be avoided by employing multi-level, page-based data structures 
-  like B-Tree or hash-table of small arrays.
+  like B-Tree, hash-table of small arrays or proper persistent-data-structures.
 - Some rendering can be avoided by triggering loop only on v-sync.
 - Some rendering can be avoided by skipping operations for same data.
 - For this, operation must be referentially transparent.
