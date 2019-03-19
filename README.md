@@ -98,7 +98,7 @@ to avoid such operations wherever possible.
   timestamping or version numbers.
 - Pause loop whenever possible. For example, you can run loop momentarily only for incoming 
   user input.
-  
+
 
 
 Optimization — Swift & Copy-on-Write
@@ -172,6 +172,12 @@ would be packing all messages into a wrapper that must be chained to spawn a new
 instance. Making a new instance of such package should be limited only for very origin
 sites such as end-user event or remote notifications. For the data I/O productions, 
 there must be a message initiated data I/O, and the message should be chained from.   
+
+
+Further Readings
+----------------
+I strongly recommend to read these articles.
+- [POSTMODERN IMMUTABLE DATA STRUCTURES](https://sinusoid.es/talks/immer-cppcon17/#/)
 
 
 
