@@ -180,7 +180,7 @@ Unfortunately, there's no magical way to trace message passsages. It needs more 
 Further Readings
 ----------------
 I strongly recommend to read these articles.
-- [POSTMODERN IMMUTABLE DATA STRUCTURES](https://sinusoid.es/talks/immer-cppcon17/#/)
+- [POSTMODERN IMMUTABLE DATA STRUCTURES by Juanpe Bolívar](https://sinusoid.es/talks/immer-cppcon17/#/)
 
 
 
