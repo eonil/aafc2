@@ -134,11 +134,12 @@ production of huge amount of messages. If it's process-able, it's storable I thi
 Also as a final protection, limit the message queue size, and reset the app if it overflows. 
 If a message queue always overflows, it's a bug to fix in overall system-wide.
 
-Limiting iteration frequency also can suppressing asynchronous infinite loop.
+Limiting iteration frequency also can suppress asynchronous infinite loop.
 Asynchronous infinite loop happend due to a bug in algorithms, therefore a mechanism 
-cannot them, but without limited iteration, such infinite loop can increase processings
+cannot prevent them. But without limited iteration, such infinite loop can increase processings
 exponentially. If iterations are limited, such infinite loop will be limited in the iteration 
-frequency.
+frequency. Here's a trade-off. Limitation makes such bugs harder to find. You can choose
+whether to use them or not.
 
 
 
@@ -158,22 +159,22 @@ that's enough for most apps nowadays.
 We can employ this timestamp to provide state version. App can store timestamp of last 
 update in any part of its state, and rendering can skip them partially in O(1) performance.
 
+If you want extreme safety, just make an empty object and use its pointer address 
+as key.
+
 
 
 Debugging — Trace Message Passages 
 ------------------------------------------------
-Always trace and store where and how the messages are produced and travelled through.
-It's not needed to run apps, but very helpful for debugging.
+Tracing where and how the messages are produced and travelled through is very helpful
+for debugging.
 This is especially important if processing of a message produces subsequent messages.
 Such message production can lead to infinite asynchronous loop, and such infinite loop
 is very hard to detect and fix. If we can trace message production chain, it becomes
 easier to detect and fix such loops.
 
-Unfortunately, there's no magical way to trace message passsages. So far the best way
-would be packing all messages into a wrapper that must be chained to spawn a new 
-instance. Making a new instance of such package should be limited only for very origin
-sites such as end-user event or remote notifications. For the data I/O productions, 
-there must be a message initiated data I/O, and the message should be chained from.   
+Unfortunately, there's no magical way to trace message passsages. It needs more works.
+
 
 
 Further Readings
